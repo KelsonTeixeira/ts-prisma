@@ -1,0 +1,13 @@
+services:
+  mongo1:
+    image: mongo
+    restart: always
+    container_name: typedb
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/mongo1:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+      MONGO_INITDB_DATABASE: typedb
